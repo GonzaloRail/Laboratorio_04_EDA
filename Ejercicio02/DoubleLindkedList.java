@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class DoubleLindkedList<E> {
     private Node<E> head;
@@ -13,30 +13,30 @@ public class DoubleLindkedList<E> {
 
     // Agregar al principio de la lista
     public void addFirst(E data) {
-        Node<E> new = new Node<>(data, this.head, null);
+        Node<E> aux = new Node<>(data, this.head, null);
 
         if (this.isEmpty()) {
-            this.tail = new;
+            this.tail = aux;
         } else {
-            this.head.setPreviousNode(new);
+            this.head.setPreviousNode(aux);
         }
         
-        this.head = new;
+        this.head = aux;
         this.len++;
     }
 
     // Agregar al final de la lista
     public void addLast(E data) {
-        Node<E> new = new Node<>(data);
+        Node<E> aux = new Node<>(data);
 
         if (this.isEmpty()) {
-            this.head = new;
+            this.head = aux;
         } else {
-            new.setPreviousNode(this.tail);
-            this.tail.setNextNode(new);
+            aux.setPreviousNode(this.tail);
+            this.tail.setNextNode(aux);
         }
 
-        this.tail = new;
+        this.tail = aux;
         this.len++;
     }
 
@@ -79,11 +79,12 @@ public class DoubleLindkedList<E> {
 
     public String toString(){
         String str = "";
-        for(Node<E> new = this.head; new != null; new = new.getNextNode()){
-            str += new.toString() + " ";
+        for(Node<E> aux = this.head; aux != null; aux = aux.getNextNode()){
+            str += aux.toString() + " ";
         }
         return str;
     }
+}
 
 
 
