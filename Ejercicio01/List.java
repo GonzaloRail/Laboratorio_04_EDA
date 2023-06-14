@@ -57,10 +57,9 @@ public class List<E>{
 	}
 	
 	public String toString() {
-		  String str = "";
-  		for(Node<E> aux = this.head; aux != null; aux = aux.getNext())
-		  	str += aux.toString() + ", ";
-  		return str;
+		String str = "";
+  		for(Node<E> aux = this.head; aux != null; aux = aux.getNext())	      	    str += aux.toString() + ", ";
+       	    return str;
 	}
 
 	public void peoresCasos(int n){
