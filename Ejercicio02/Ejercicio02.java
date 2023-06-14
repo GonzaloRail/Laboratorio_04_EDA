@@ -44,11 +44,17 @@ public class Ejercicio02 {
         int tamano;
         
         Scanner teclado = new Scanner(System.in);
-        System.out.print("Introduzca el tamaño del arreglo: ");
+        System.out.print("Introduzca el tamaño máximo del arreglo: ");
         tamano = teclado.nextInt();
         
-        int arreglo[] = generarPeorCaso(tamano);
-        imprimirArreglo(arreglo);
-        insertionSort(arreglo);
+        DoubleLindkedList<int[]> prueba = new DoubleLindkedList<>();
+        
+        for (int n = 1; n <= tamano; n++) {
+            prueba.addLast(generarPeorCaso(n));
+        }
+        
+        for (int n = 0; n < prueba.length(); n++) {
+            System.out.println(insertionSort(prueba.get(n)));
+        }
     }
 }

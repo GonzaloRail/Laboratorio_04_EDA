@@ -72,6 +72,11 @@ public class DoubleLindkedList<E> {
         this.len--;
     }
 
+    //Tamaño
+    public int length(){
+        return this.len;
+    }
+
     // Verificar si la lista está vacía
     public boolean isEmpty() {
         return this.head == null;
@@ -83,6 +88,19 @@ public class DoubleLindkedList<E> {
             str += aux.toString() + " ";
         }
         return str;
+    }
+
+    public E get(int i) {
+        Node<E> currentNode = this.head;
+        int currentIndex = 0;
+        while (currentNode != null && currentIndex < i) {
+            currentNode = currentNode.getNextNode();
+            currentIndex++;
+        }
+        if (currentNode != null) {
+            return currentNode.getData();
+        }
+        return null;
     }
 }
 
