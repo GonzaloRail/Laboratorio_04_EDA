@@ -77,6 +77,14 @@ public class DoubleLindkedList<E> {
         return this.head == null;
     }
 
+    public String toString(){
+        String str = "";
+        for(Node<E> new = this.head; new != null; new = new.getNextNode()){
+            str += new.toString() + " ";
+        }
+        return str;
+    }
+
 
 
     
