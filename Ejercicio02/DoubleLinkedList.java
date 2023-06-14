@@ -42,47 +42,42 @@ public class DoubleLindkedList<E> {
 
     // Eliminar el primer elemento de la lista
     public void delFirst() {
-        if (head == null) {
+        if (this.isEmpty()) {
             return;
         }
-
-        if (head == tail) {
-            head = null;
-            tail = null;
+        //Si sólo hay un Nodo
+        if (this.head == this.tail) {
+            this.head = null;
+            this.tail = null;
         } else {
-            head = head.getNextNode();
-            head.setPreviousNode(null);
+            this.head.getNextNode().setPreviousNode(null);
         }
 
-        len--;
+        this.len--;
     }
 
     // Eliminar el último elemento de la lista
     public void delLast() {
-        if (head == null) {
+        if (this.isEmpty()) {
             return;
         }
 
-        if (head == tail) {
-            head = null;
-            tail = null;
+        if (this.head == this.tail) {
+            this.head = null;
+            this.tail = null;
         } else {
-            tail = tail.getPreviousNode();
-            tail.setNextNode(null);
+            tail.getPreviousNode().setNextNode(null);
         }
 
-        len--;
+        this.len--;
     }
 
     // Verificar si la lista está vacía
     public boolean isEmpty() {
-        return head == null;
+        return this.head == null;
     }
 
-    // Obtener la longitud de la lista
-    public int length() {
-        return len;
-    }
+
 
     
 
