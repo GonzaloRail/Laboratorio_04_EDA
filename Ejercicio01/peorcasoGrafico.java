@@ -11,19 +11,19 @@ public class peorcasoGrafico {
         System.out.print("Introduzca el tamaño máximo del último arreglo: ");
         tamano = teclado.nextInt();
 
-        ArrayList<int[]> casos = new ArrayList<int[]>();
+        List<int[]> lista = new List<int[]>();
         String archivoInsercion = "insercion.txt";
         PrintWriter oS = new PrintWriter(archivoInsercion);
 
         for (int n = 1; n <= tamano; n++) {
-            casos.add(generarPeorCaso(n));
+            lista.insert(generarPeorCaso(n));
         }
-        Iterator<int[]> puntero = casos.iterator();
-        while (puntero.hasNext()) {
-            oS.println(String.valueOf(insertionSort(puntero.next())));
+        for (int i = 0; i < lista.length(); i++) {
+            oS.println(String.valueOf(insertionSort(lista.get(i).getData())));
         }
         oS.close();
-        //plot "/Users/richarteq/eclipse-workspace/Algoritmica/insercion.txt" with lines       
+
+        //ES MUY IMPORTANTE aclarar que la direccion del archivo cambiará según el equipo en que se trabaje
 
         JavaPlot p = new JavaPlot();
         p.addPlot("\"C:/Users/MAURICIO/Documents/NetBeansProjects/Eda_D_Lab04/insercion.txt\" with lines");
