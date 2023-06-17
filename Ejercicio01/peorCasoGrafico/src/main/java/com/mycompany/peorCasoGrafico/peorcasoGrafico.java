@@ -26,7 +26,7 @@ public class peorcasoGrafico {
         //ES MUY IMPORTANTE aclarar que la direccion del archivo cambiará según el equipo en que se trabaje
 
         JavaPlot p = new JavaPlot();
-        p.addPlot("\"C:/Users/MAURICIO/Documents/NetBeansProjects/Eda_D_Lab04/insercion.txt\" with lines");
+        p.addPlot("\"C:/Users/MAURICIO/Documents/EDA D LAB/Laboratorio_04_EDA/Ejercicio01/peorCasoGrafico/insercion.txt\" with lines");
         p.plot();
     }
 
