@@ -16,22 +16,18 @@ public class List<T> {
         return this.count;
     }
 
-    public void insertFirst(T x) {
-        this.head = new Node<T>(x, this.head);
-        this.count++;
-    }
-
-    public void insertLast(T x) {
+    public void insert(T x) {
         if (isEmpty()) {
-            insertFirst(x);
-        } else {
+            this.head = new Node<T>(x, this.head);
+        } 
+        else {
             Node<T> aux = this.head;
             while (aux.getNext() != null) {
                 aux = aux.getNext();
             }
             aux.setNext(new Node<T>(x));
-            this.count++;
         }
+        this.count++;
     }
 
     public boolean search(T x) {
@@ -68,4 +64,5 @@ public class List<T> {
         }
         return str;
     }
+
 }
